@@ -1,5 +1,6 @@
 # Results of Homework 01
 
+```
 task1: x = 4
 task2: x = 5
 task3: x = 1
@@ -19,3 +20,4 @@ task14: x = 10
 task15: 
 x = hello world
 x = hello world
+```
