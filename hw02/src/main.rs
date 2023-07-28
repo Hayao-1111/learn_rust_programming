@@ -80,10 +80,12 @@ fn trans() {
                 *game_lock = Game::new();
             }
 
+            // Done
             // TODO START
             // 不管是暂停状态还是停止状态，都直接重新进入运行状态
             // 修改game_lock.state使其成为运行状态
-            unimplemented!();
+            game_lock.state = GameState::Playing;
+            // unimplemented!();
             // TODO END
             game_lock.show_all();
             begin_new_thread = true
@@ -127,10 +129,12 @@ fn main() -> Result<()> {
                     'q' => break,
                     // 按到空格，则调用trans函数，改变游戏状态
                     ' ' => {
+                        // Done
                         // TODO START
-                        unimplemented!();
+                        trans();
+                        // unimplemented!();
                         // TODO FINISH
-                    }
+                    },
                     _ => (),
                 },
                 // 按↑（👆）键
@@ -154,10 +158,13 @@ fn main() -> Result<()> {
                 }
                 // 按←（👈）键
                 KeyCode::Left => {
+                    // Done
                     // TODO START
-                    let game_lock = GAME.lock().unwrap();
+                    let mut game_lock = GAME.lock().unwrap();
                     if game_lock.state == GameState::Playing {
-                        unimplemented!();
+                        game_lock.shift(-1);
+                        game_lock.show_all();
+                        // unimplemented!();
                     }
                     // TODO FINISH
                 }

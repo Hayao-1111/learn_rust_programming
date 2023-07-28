@@ -1,0 +1,5 @@
+Linux version 5.15.90.1-microsoft-standard-WSL2 (oe-user@oe-host) (x86_64-msft-linux-gcc (GCC) 9.3.0, GNU ld (GNU Binutils) 2.34.0.20200220)
+Distributor ID:	Ubuntu
+Description:	Ubuntu 18.04.6 LTS
+Release:	18.04
+Codename:	bionic

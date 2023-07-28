@@ -160,6 +160,7 @@ impl InterFace {
             }
         }
 
+        // Done
         // TODO START
         // 修改下列代码，使得其可以正常通过编译
 
@@ -170,12 +171,12 @@ impl InterFace {
             GameState::Pausing => "Pausing",
         };
         // 绘制当前状态
-        write_styled(interface, 17, 5, words);
+        write_styled(&mut interface, 17, 5, words.to_string());
 
         // 定义一个字符串，格式为"Scores: xx"，其中xx为当前总分，即传入的参数scores
-        let scores_str = "";
+        let scores_str = format!("Scores: {}", scores);
         // 绘制当前总分
-        write_styled(interface, 16, 3, scores_str);
+        write_styled(&mut interface, 16, 3, scores_str);
 
         // TODO END
         for line in &interface {

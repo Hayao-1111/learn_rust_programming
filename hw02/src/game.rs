@@ -79,15 +79,18 @@ impl Game {
                 self.scores += 20u128.pow(cleanpath);
             }
 
+            // Done
             // TODO START
 
             // 更新当前的方块为下一个方块
             // 注意直接改变所有权会进行报错，因为此时会让self.nxtter失效，但是我们不允许一个有效对象的某一个成员直接失效
             // 所以我们需要为Tetris实现某一个trait
+            // Done 已实现此trait 即新增Copy特征
             self.curter = self.nxtter;
 
             // 使用Tetris的生成函数生成下一个方块，并绑定到self.nxtter上
-            unimplemented!();
+            // unimplemented!();
+            self.nxtter = Tetris::new();
 
             // TODO END
         } else {
@@ -123,9 +126,11 @@ impl Game {
             if (yt < 0 || yt >= 10)
                 || !(xt < 0 || xt < 20 && self.blockes[xt as usize][yt as usize] == 0)
             {
+                // Done
                 // TODO START
                 // 若不合法，则旋转回去，即复原
                 // 提示：向右旋转的反面是什么呢
+                let _ = &self.curter.turn_left();
                 // TODO FINISH
                 return;
             }
