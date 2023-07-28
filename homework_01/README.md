@@ -1,4 +1,6 @@
-# Results of Homework 01
+# Homework 01
+
+Results of Homework 01:
 
 ```
 task1: x = 4
